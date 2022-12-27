@@ -1,6 +1,5 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-// import Notiflix from 'notiflix';
 import Notiflix from 'notiflix';
 
 const refs = {
@@ -25,7 +24,6 @@ const options = {
 
     refs.startButton.classList.remove('disable-timer');
     refs.startButton.classList.add('is-active-timer');
-
 
     refs.startButton.addEventListener('click', () => {
       setInterval(() => {
@@ -72,5 +70,5 @@ function convertMs(ms) {
 }
 
 function addLeadingZero(value) {
-  return String(convertMs(timerTime).hours).padStart(2, 0)
+  return String(convertMs(timerTime).hours).padStart(2, 0);
 }

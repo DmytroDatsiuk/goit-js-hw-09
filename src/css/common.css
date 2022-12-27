@@ -81,7 +81,30 @@ img {
 
 .timer {
   display: flex;
+  margin-top: 20px;
+  /* margin-left: 12px; */
+  text-align: center;
+  
 }
-/* .field {
-  flex-wrap: wrap;
-} */
+.field {
+  margin-right: 5px;
+  width: 60px;
+}
+.time {
+  background-color: #05003369;
+  color: rgb(252, 248, 248);
+  text-align: center;
+  font-size: 28px;
+  border-radius: 25px;
+}
+.value {
+  text-align: center;
+}
+.name {
+  border-radius: 15px;
+  background-color: #8f000056;
+}
+.label {
+  display: block;
+  text-align: center;
+}
