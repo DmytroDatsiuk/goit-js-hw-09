@@ -78,3 +78,10 @@ img {
 .is-active-timer:hover {
   background-color: rgba(175, 131, 131, 0.466);
 }
+
+.timer {
+  display: flex;
+}
+/* .field {
+  flex-wrap: wrap;
+} */
