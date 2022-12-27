@@ -16,3 +16,65 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.box-buttons {
+  display: flex;
+  justify-content: center;
+  justify-items: end;
+  padding: 150px;
+}
+
+.buttons-start-and-stop {
+  display: inline-block;
+
+  margin-right: 20px;
+
+  padding: 20px;
+  border: 2px solid #cfc5c5;
+  border-radius: 7px;
+  background-color: #fff;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.buttons-start-and-stop:hover {
+  background-color: #8f000056;
+  color: #fafafa;  
+}
+
+.start-button {
+  background-color: #4400e479;
+  color: #faf6f6;
+}
+.stop-button {
+  background-color: rgba(255, 0, 0, 0.438);
+  color: #faf6f6;
+}
+
+.input-date {
+  padding: 7px;
+  margin-right: 5px;
+  font-size: 18px;
+
+}
+
+.disable-timer {
+  background-color: #d4d1d1;
+  color: rgba(0, 0, 0, 0.5);
+  border: 0;
+  padding: 9px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.is-active-timer {
+  font-size: 18px;
+  padding: 7px;
+  cursor: pointer;
+}
+.is-active-timer:hover {
+  background-color: rgba(175, 131, 131, 0.466);
+}

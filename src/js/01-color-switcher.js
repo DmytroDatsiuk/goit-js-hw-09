@@ -16,16 +16,23 @@ refs.start.addEventListener('click', () => {
   timerId = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
+
+  refs.start.classList.add('start-button');
+  refs.stop.classList.add('stop-button');
+
+
 });
 
 refs.stop.addEventListener('click', () => {
   clearInterval(timerId);
   isActive = false;
+
+
 });
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-const currentDate = new Date()
-console.log(currentDate.getDay())
+const currentDate = new Date();
+console.log(currentDate.getDay());
