@@ -29,20 +29,15 @@ const options = {
       setInterval(() => {
         const timerTime = Number(selectedDates[0]) - Date.now();
 
-        refs.days.textContent = String(convertMs(timerTime).days).padStart(
-          2,
-          0
-        );
-        refs.hours.textContent = String(convertMs(timerTime).hours).padStart(
-          2,
-          0
-        );
-        refs.minutes.textContent = String(
-          convertMs(timerTime).minutes
-        ).padStart(2, 0);
-        refs.seconds.textContent = String(
-          convertMs(timerTime).seconds
-        ).padStart(2, 0);
+        const days = convertMs(timerTime).days;
+        const hours = convertMs(timerTime).hours;
+        const minutes = convertMs(timerTime).minutes;
+        const seconds = convertMs(timerTime).seconds;
+
+        refs.days.textContent = addLeadingZero(days);
+        refs.hours.textContent = addLeadingZero(hours);
+        refs.minutes.textContent = addLeadingZero(minutes);
+        refs.seconds.textContent = addLeadingZero(seconds);
       }, 1000);
     });
   },
@@ -70,5 +65,5 @@ function convertMs(ms) {
 }
 
 function addLeadingZero(value) {
-  return String(convertMs(timerTime).hours).padStart(2, 0);
+  return String(value).padStart(2, 0);
 }
