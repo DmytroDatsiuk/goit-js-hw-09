@@ -10,16 +10,10 @@ function promisesGenerator(e) {
 
   const { delay, step, amount } = e.currentTarget.elements;
 
-  createPromise(1, Number(delay.value))
-    .then(({ position, delay }) => {
-      Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-    })
-    .catch(({ position, delay }) => {
-      Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-    });
+  let delayValue = Number(delay.value);
 
-  for (let i = 2; i <= Number(amount.value); i++) {
-    createPromise(i, Number(step.value) * (i - 1)+ Number(delay.value))
+  for (let i = 1; i <= Number(amount.value); i++) {
+    createPromise(i, delayValue)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`
@@ -30,7 +24,12 @@ function promisesGenerator(e) {
           `❌ Rejected promise ${position} in ${delay}ms`
         );
       });
+    delayValue += Number(step.value);
   }
+
+  delay.value = '';
+  step.value = '';
+  amount.value = '';
 }
 
 function createPromise(position, delay) {
