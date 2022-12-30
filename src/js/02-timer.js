@@ -43,13 +43,13 @@ const options = {
 
         count = Number(days + hours + minutes + seconds);
 
-        console.log(count);
         refs.days.textContent = addLeadingZero(days);
         refs.hours.textContent = addLeadingZero(hours);
         refs.minutes.textContent = addLeadingZero(minutes);
         refs.seconds.textContent = addLeadingZero(seconds);
 
         if (count === 0) {
+          Notiflix.Notify.success(`✅ The countdown is over`);
           clearInterval(timerId);
         }
       }, 1000);
