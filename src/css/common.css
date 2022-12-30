@@ -24,15 +24,19 @@ img {
   padding: 150px;
 }
 
-.buttons-start-and-stop {
+.mr {
+  margin-right: 20px;
+}
+
+.active-button {
   display: inline-block;
 
-  margin-right: 20px;
 
   padding: 20px;
   border: 2px solid #cfc5c5;
   border-radius: 7px;
   background-color: #fff;
+  color: #212121;
 
   font-size: 18px;
   font-weight: bold;
@@ -40,25 +44,33 @@ img {
   cursor: pointer;
 }
 
-.buttons-start-and-stop:hover {
+.active-button:hover {
   background-color: #8f000056;
-  color: #fafafa;  
+  color: #fafafa;
 }
 
-.start-button {
-  background-color: #4400e479;
-  color: #faf6f6;
-}
-.stop-button {
-  background-color: rgba(255, 0, 0, 0.438);
-  color: #faf6f6;
+.disable-button {
+  display: inline-block;
+
+  background-color: #5b5a5c;
+  color: #1615155d;
+
+  padding: 20px;
+
+  border: 2px solid #cfc5c5;
+  border-radius: 7px; 
+  background-color: #fff;
+
+  font-size: 18px;
+  font-weight: unset; 
+
+  cursor: unset;
 }
 
 .input-date {
   padding: 7px;
   margin-right: 5px;
   font-size: 18px;
-
 }
 
 .disable-timer {
@@ -84,7 +96,6 @@ img {
   margin-top: 20px;
   /* margin-left: 12px; */
   text-align: center;
-  
 }
 .field {
   margin-right: 5px;

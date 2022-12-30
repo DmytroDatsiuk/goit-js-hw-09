@@ -13,19 +13,26 @@ refs.start.addEventListener('click', () => {
   }
   isActive = true;
 
+  refs.start.classList.remove('active-button');
+  refs.start.classList.add('disable-button');
+
+  refs.stop.classList.remove('disable-button');
+  refs.stop.classList.add('active-button');
+
   timerId = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-
-  refs.start.classList.add('start-button');
-  refs.stop.classList.add('stop-button');
-
-
 });
 
 refs.stop.addEventListener('click', () => {
   clearInterval(timerId);
   isActive = false;
+
+  refs.start.classList.remove('disable-button');
+  refs.start.classList.add('active-button');
+
+  refs.stop.classList.remove('active-button');
+  refs.stop.classList.add('disable-button');
 
 
 });
@@ -35,4 +42,5 @@ function getRandomHexColor() {
 }
 
 const currentDate = new Date();
-console.log(currentDate.getDay());
+// console.log(currentDate.getDay());
+// console.log('hi');

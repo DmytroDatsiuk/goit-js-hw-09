@@ -26,6 +26,9 @@ const options = {
     refs.startButton.classList.add('is-active-timer');
 
     refs.startButton.addEventListener('click', () => {
+      refs.startButton.classList.remove('is-active-timer');
+      refs.startButton.classList.add('disable-timer');
+
       setInterval(() => {
         const timerTime = Number(selectedDates[0]) - Date.now();
 
