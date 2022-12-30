@@ -11,6 +11,8 @@ const refs = {
   seconds: document.querySelector('[data-seconds]'),
 };
 
+let timerId = null;
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -29,7 +31,9 @@ const options = {
       refs.startButton.classList.remove('is-active-timer');
       refs.startButton.classList.add('disable-timer');
 
-      setInterval(() => {
+      let count = 0;
+
+      timerId = setInterval(() => {
         const timerTime = Number(selectedDates[0]) - Date.now();
 
         const days = convertMs(timerTime).days;
@@ -37,10 +41,17 @@ const options = {
         const minutes = convertMs(timerTime).minutes;
         const seconds = convertMs(timerTime).seconds;
 
+        count = Number(days + hours + minutes + seconds);
+
+        console.log(count);
         refs.days.textContent = addLeadingZero(days);
         refs.hours.textContent = addLeadingZero(hours);
         refs.minutes.textContent = addLeadingZero(minutes);
         refs.seconds.textContent = addLeadingZero(seconds);
+
+        if (count === 0) {
+          clearInterval(timerId);
+        }
       }, 1000);
     });
   },
